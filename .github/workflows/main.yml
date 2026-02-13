@@ -1,0 +1,31 @@
+name: DevOps Sentinel CI/CD
+
+on:
+  push:
+    branches: [ master, main, dev ]
+  pull_request:
+    branches: [ master, main, dev ]
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      # STAGE 1: BUILD
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Python & Install Deps
+        run: |
+          pip install flask psutil
+
+      # STAGE 2: DEPLOY (Simulation)
+      - name: Deploy Simulation
+        run: |
+          echo "Deploying application dashboard..."
+          # Yahan deployment logs simulate ho rahe hain
+          echo "Deployment successful on port 5000"
+
+      # STAGE 3: TEST (Mandatory)
+      - name: Run Application Tests
+        run: |
+          python test_app.py
