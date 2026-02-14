@@ -1,4 +1,4 @@
-##DevOps Sentinel - System Health Monitor
+#DevOps Sentinel - System Health Monitor
 
 "DevOps Sentinel" is a lightweight system monitoring tool designed to track live server metrics within a Dockerized environment.
 
